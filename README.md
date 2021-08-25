@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-# project_4
 
-=======
-# Project Overview
+# project_4
 
 ## Project Name
 
@@ -17,37 +14,105 @@ WonderKid Report
 
 #### Goals
 
-- Allow user to search artist using form input
-- Render dynamic contents on page (name, logo, picture, website, label, genre and description.)
-- Remove previous search result
+- Create full CRUD functionality for creating, reading, updating and deleting post.
+- Create a non-authorized routes for landing page and player report browsing.
+- Create an authorized routes for creating, editing and deleting player reports.
+- Build a NoSQL database with PostegreSQL to host all user information.
+- Build an user authentication and association to restrict user interaction with app's contents.
+- Set media queries for two different devices other than computer screen. 
 
 #### Libraries and Dependencies  
 
+|  Library | Description 
+
+|React| Front-end user interaction and state control through manipulation of a virtual DOM.
+|React Router| Site navigation and routing for single page applications
+|wRails| Backend model-view-controller framework for Ruby
+|Axios| Promise-based HTTP client for the browser and node.js
+
 ### Client Wireframe
+![Wireframe](./assets/wf.png)
 
 ### React Component Tree
+![Wireframe](./assets/p4compotree.png)
 
 ### React Component Hierarchy
+
+```
+src
+|__ App.jsx
+|__ index.js
+|__ assets/
+|__ components/
+      |__ Layout/
+          |__ Layout.jsx
+          |__ Layout.css
+      |__ Nav/
+          |__ Nav.jsx
+          |__ Nav.css
+      |__ Footer/
+          |__ Footer.jsx
+          |__ Footer.css
+      |__ Search/
+          |__ Search.jsx
+          |__ Search.css
+      |__ Sort/
+          |__ Sort.jsx
+          |__ Sort.css
+|__ screens/
+      |__ Home/
+          |__ Home.jsx
+          |__ Home.css
+      |__ Players/
+          |__ Players.jsx
+          |__ Players.css
+      |__ PlayerDetail/
+          |__ PlayerDetail.jsx
+          |__ PlayerDetail.css
+      |__ PlayerEdit/
+          |__ PlayerEdit.jsx
+          |__ PlayerEdit.css
+      |__ PlayerCreate/
+          |__ PlayerCreate.jsx
+          |__ PlayerCreate.css
+      |__ SignIn/
+          |__ SignIn.jsx
+          |__ SignIn.css
+      |__ Register/
+          |__ Register.jsx
+          |__ Register.css
+|__ services/
+      |__ apiConfig.js
+      |__ users.js
+      |__ players.js
+      |__ positions.js
+```
+
 
 ## Time Estimates
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| CORE APP STRUCTURE (HTML,CSS,JAVASCRIPT) | H | 3hrs| 3hrs | 3hrs |
-| Researching API | H | 3hrs| 2hrs | 2hrs |
-| Insert search parameter into API | H | 3hrs| 3hrs | 3hrs |
-| PSEUDOCODE | H | 3hrs| 2hrs | 2hrs |
-| API REQUEST(JAVASCRIPT FUNCTION) | H | 3hrs| 2.5hrs | 2.5hrs |
-| CREATE DYNAMIC HTML ELEMENTS | H | 3hrs| 3hrs | 3hrs |
-| UTILIZE FLEXBOX/LAYOUT | H | 3hrs| 2hrs | 2hrs |
-| STYLE HTML ELEMENTS | H | 3hrs| 3hrs | 3hrs |
-| REMOVE PREVIOUS SEARCH RESULT | H | 3hrs| 2hrs | 2hrs |
-| DEBUGGING | H | 3hrs| 2hrs | 2hrs |
-| DEPLOYMENT | H | 1hrs| hrs | hrs |
-| ADD UI ELEMENTS | H | 1hrs| 1hrs | 1hrs |
-| BUILDING PROJECT WORKSHEET | H | 3hrs| 3hrs | 3hrs |
-| APPEND DYNAMIC ELEMENTS | H | 3hrs| 3hrs | 3hrs |
-| Total | H | 40hrs| hrs | hrs |
+| CORE BACKEND STRUCTURE | H | 3hrs|  |  |
+| BACKEND CRUD | H | 2hrs|  |  |
+| BACKEND AUTH | H | 2hrs|  |  |
+| SEED DATA | H | 2hrs|  |  |
+| FRONTEND COMPONENTS HIERARCHY | H | 2hrs| | |
+| FRONTEND CRUD | H | 3hrs|  |  |
+| FRONTEND AUTH | H | 3hrs|  |  |
+| FRONTEND ROUTING | H | 2hrs|  |  |
+| FRONTEND STATE MANAGEMENT | H | 2hrs|  |  |
+| LANDING PAGE LAYOUT | H | 1hrs|  |  |
+| DETAIL PAGE LAYOUT | H | 1hrs|  |  |
+| EDIT PAGE LAYOUT | H | 1hrs|  |  |
+| CREATE PAGE LAYOUT | H | 1hrs|  |  |
+| SIGN IN / REGISTER LAYOUT | H | 1hrs|  |  |
+| BASIC CSS | H | 3hrs|  |  |
+| DETAILED CSS | H | 3hrs|  |  |
+| MEDIA QUERIES SETTING | H | 3hrs|  |  |
+| DEBUGGING | H | 3hrs|  |  |
+| REVIEW | H | 2hrs|  |  |
+| Total | H | 40hrs|  |  |
 
 ## Server (Back-End)
 
@@ -56,10 +121,14 @@ WonderKid Report
 
 ## Post MVP
 
-
+- Functionality for restricting each user to only be able to update or delete their own posts only.
+- Functionality for restricting non-user to be able to read only first few lines of reports.
+- Some experimental challenges on CSS for player report cards.
+- Create a rank table that lists the most potential players based on ratings.
+- Make a like button that may indicate the popularity of each player. 
 
 ## Code Showcase
  
 
 ## Code Issues & Resolutions
->>>>>>> 7183b38c0408e0a2535c10b88e47bd9551c4f5be
+
