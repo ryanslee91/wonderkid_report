@@ -121,6 +121,7 @@ src
 ## Post MVP
 
 - Functionality for restricting each user to only be able to update or delete their own posts only.
+- Functionality for restricting non-user to be able to read only first few lines of reports.
 - Some experimental challenges on CSS for player report cards.
 - Create a rank table that lists the most potential players based on ratings.
 - Make a like button that may indicate the popularity of each player. 
