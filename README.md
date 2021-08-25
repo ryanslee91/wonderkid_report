@@ -25,10 +25,10 @@ WonderKid Report
 
 |  Library | Description 
 
-|React| Front-end user interaction and state control through manipulation of a virtual DOM.
-|React Router| Site navigation and routing for single page applications
-|wRails| Backend model-view-controller framework for Ruby
-|Axios| Promise-based HTTP client for the browser and node.js
+|  React  | Front-end user interaction and state control through manipulation of a virtual DOM.
+|  React Router  | Site navigation and routing for single page applications
+|   Rails   | Backend model-view-controller framework for Ruby
+|   Axios   | Promise-based HTTP client for the browser and node.js
 
 ### Client Wireframe
 ![Wireframe](./assets/wf.png)
