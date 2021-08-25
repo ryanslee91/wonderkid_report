@@ -30,7 +30,7 @@ WonderKid Report
 
 ### React Component Hierarchy
 
-
+```
 src
 |__ App.jsx
 |__ index.js
@@ -78,7 +78,7 @@ src
       |__ users.js
       |__ players.js
       |__ positions.js
-
+```
 
 
 ## Time Estimates
