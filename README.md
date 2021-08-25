@@ -1,5 +1,4 @@
 
-# project_4
 
 ## Project Name
 
@@ -33,7 +32,8 @@ WonderKid Report
 ```
 
 ### Client Wireframe
-![Wireframe](./assets/wf.png)
+![Wireframe](./assets/wf2.png)
+![Wireframe](./assets/wf3.png)
 
 ### React Component Tree
 ![Wireframe](./assets/p4compotree.png)
