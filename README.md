@@ -48,7 +48,7 @@ WonderKid Report
 ## Server (Back-End)
 
 ### ERD Model
-
+![Wireframe](./assets/ERD_p4.png)
 
 ## Post MVP
 
