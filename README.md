@@ -1,9 +1,6 @@
 
 # project_4
 
-# Project Overview
-
-
 ## Project Name
 
 WonderKid Report
@@ -17,11 +14,21 @@ WonderKid Report
 
 #### Goals
 
-- Allow user to search artist using form input
-- Render dynamic contents on page (name, logo, picture, website, label, genre and description.)
-- Remove previous search result
+- Create full CRUD functionality for creating, reading, updating and deleting post.
+- Create a non-authorized routes for landing page and player report browsing.
+- Create an authorized routes for creating, editing and deleting player reports.
+- Build a NoSQL database with PostegreSQL to host all user information.
+- Build an user authentication and association to restrict user interaction with app's contents.
+- Set media queries for two different devices other than computer screen. 
 
 #### Libraries and Dependencies  
+
+|  Library | Description 
+
+|React| Front-end user interaction and state control through manipulation of a virtual DOM.
+|React Router| Site navigation and routing for single page applications
+|Rails| Backend model-view-controller framework for Ruby
+|Axios| Promise-based HTTP client for the browser and node.js
 
 ### Client Wireframe
 
@@ -85,21 +92,26 @@ src
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| CORE APP STRUCTURE (HTML,CSS,JAVASCRIPT) | H | 3hrs| 3hrs | 3hrs |
-| Researching API | H | 3hrs| 2hrs | 2hrs |
-| Insert search parameter into API | H | 3hrs| 3hrs | 3hrs |
-| PSEUDOCODE | H | 3hrs| 2hrs | 2hrs |
-| API REQUEST(JAVASCRIPT FUNCTION) | H | 3hrs| 2.5hrs | 2.5hrs |
-| CREATE DYNAMIC HTML ELEMENTS | H | 3hrs| 3hrs | 3hrs |
-| UTILIZE FLEXBOX/LAYOUT | H | 3hrs| 2hrs | 2hrs |
-| STYLE HTML ELEMENTS | H | 3hrs| 3hrs | 3hrs |
-| REMOVE PREVIOUS SEARCH RESULT | H | 3hrs| 2hrs | 2hrs |
-| DEBUGGING | H | 3hrs| 2hrs | 2hrs |
-| DEPLOYMENT | H | 1hrs| hrs | hrs |
-| ADD UI ELEMENTS | H | 1hrs| 1hrs | 1hrs |
-| BUILDING PROJECT WORKSHEET | H | 3hrs| 3hrs | 3hrs |
-| APPEND DYNAMIC ELEMENTS | H | 3hrs| 3hrs | 3hrs |
-| Total | H | 40hrs| hrs | hrs |
+| CORE BACKEND STRUCTURE | H | 3hrs|  |  |
+| BACKEND CRUD | H | 2hrs|  |  |
+| BACKEND AUTH | H | 2hrs|  |  |
+| SEED DATA | H | 2hrs|  |  |
+| FRONTEND COMPONENTS HIERARCHY | H | 2hrs| | |
+| FRONTEND CRUD | H | 3hrs|  |  |
+| FRONTEND AUTH | H | 3hrs|  |  |
+| FRONTEND ROUTING | H | 2hrs|  |  |
+| FRONTEND STATE MANAGEMENT | H | 2hrs|  |  |
+| LANDING PAGE LAYOUT | H | 1hrs|  |  |
+| DETAIL PAGE LAYOUT | H | 1hrs|  |  |
+| EDIT PAGE LAYOUT | H | 1hrs|  |  |
+| CREATE PAGE LAYOUT | H | 1hrs|  |  |
+| SIGN IN / REGISTER LAYOUT | H | 1hrs|  |  |
+| BASIC CSS | H | 3hrs|  |  |
+| DETAILED CSS | H | 3hrs|  |  |
+| MEDIA QUERIES SETTING | H | 3hrs|  |  |
+| DEBUGGING | H | 3hrs|  |  |
+| REVIEW | H | 2hrs|  |  |
+| Total | H | 40hrs|  |  |
 
 ## Server (Back-End)
 
@@ -108,10 +120,13 @@ src
 
 ## Post MVP
 
-
+- Functionality for restricting each user to only be able to update or delete their own posts only.
+- Some experimental challenges on CSS for player report cards.
+- Create a rank table that lists the most potential players based on ratings.
+- Make a like button that may indicate the popularity of each player. 
 
 ## Code Showcase
  
 
 ## Code Issues & Resolutions
->>>>>>> 7183b38c0408e0a2535c10b88e47bd9551c4f5be
+
