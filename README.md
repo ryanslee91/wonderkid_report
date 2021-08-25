@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 # project_4
 
-=======
 # Project Overview
+
 
 ## Project Name
 
@@ -29,6 +29,57 @@ WonderKid Report
 ![Wireframe](./assets/p4compotree.png)
 
 ### React Component Hierarchy
+
+
+src
+|__ App.jsx
+|__ index.js
+|__ assets/
+|__ components/
+      |__ Layout/
+          |__ Layout.jsx
+          |__ Layout.css
+      |__ Nav/
+          |__ Nav.jsx
+          |__ Nav.css
+      |__ Footer/
+          |__ Footer.jsx
+          |__ Footer.css
+      |__ Search/
+          |__ Search.jsx
+          |__ Search.css
+      |__ Sort/
+          |__ Sort.jsx
+          |__ Sort.css
+|__ screens/
+      |__ Home/
+          |__ Home.jsx
+          |__ Home.css
+      |__ Players/
+          |__ Players.jsx
+          |__ Players.css
+      |__ PlayerDetail/
+          |__ PlayerDetail.jsx
+          |__ PlayerDetail.css
+      |__ PlayerEdit/
+          |__ PlayerEdit.jsx
+          |__ PlayerEdit.css
+      |__ PlayerCreate/
+          |__ PlayerCreate.jsx
+          |__ PlayerCreate.css
+      |__ SignIn/
+          |__ SignIn.jsx
+          |__ SignIn.css
+      |__ Register/
+          |__ Register.jsx
+          |__ Register.css
+|__ services/
+      |__ apiConfig.js
+      |__ users.js
+      |__ players.js
+      |__ positions.js
+
+
 
 ## Time Estimates
 
