@@ -26,6 +26,7 @@ WonderKid Report
 ### Client Wireframe
 
 ### React Component Tree
+![Wireframe](./assets/p4compotree.png)
 
 ### React Component Hierarchy
 
