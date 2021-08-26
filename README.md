@@ -119,7 +119,7 @@ src
 ## Server (Back-End)
 
 ### ERD Model
-![Wireframe](./assets/erd.png)
+![Wireframe](./assets/p4erd.png)
 
 ## Post MVP
 
