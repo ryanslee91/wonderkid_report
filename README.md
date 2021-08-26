@@ -32,7 +32,7 @@ WonderKid Report
 ```
 
 ### Client Wireframe
-![Wireframe](./assets/p4diagram.png)
+![Wireframe](./assets/pr4diagram.png)
 
 
 ### React Component Tree
