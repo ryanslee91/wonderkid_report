@@ -32,7 +32,7 @@ WonderKid Report
 ```
 
 ### Client Wireframe
-![Wireframe](./assets/p4diagram.png)
+![Wireframe](./assets/pr4diagram.png)
 
 
 ### React Component Tree
@@ -119,7 +119,7 @@ src
 ## Server (Back-End)
 
 ### ERD Model
-![Wireframe](./assets/p4erd.png)
+![Wireframe](./assets/erd.png)
 
 ## Post MVP
 
