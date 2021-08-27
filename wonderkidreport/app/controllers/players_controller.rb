@@ -1,54 +1,54 @@
-# class PlayersController < ApplicationController
-#   before_action :set_player, only: [:show, :update, :destroy]
-#   before_action :authorize_request, only: [:create, :update, :destroy]
+class PlayersController < ApplicationController
+  before_action :set_player, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
-#   # GET /players
-#   def index
-#     @players = Player.all
+  # GET /players
+  def index
+    @players = Player.all
 
-#     render json: @players
-#   end
+    render json: @players
+  end
 
-#   # GET /players/1
-#   def show
-#     render json: @player, include: :leagues
-#   end
+  # GET /players/1
+  def show
+    render json: @player, include: :leagues
+  end
 
-#   # POST /players
-#   def create
-#     @player = Player.new(player_params)
-#     @player.user = @current_user
-#     if @player.save
-#       render json: @player, status: :created
-#     else
-#       render json: @player.errors, status: :unprocessable_entity
-#     end
-#   end
+  # POST /players
+  def create
+    @player = Player.new(player_params)
+    @player.user = @current_user
+    if @player.save
+      render json: @player, status: :created
+    else
+      render json: @player.errors, status: :unprocessable_entity
+    end
+  end
 
-#   # PATCH/PUT /players/1
-#   def update
-#     if @player.update(player_params)
-#       render json: @player
-#     else
-#       render json: @player.errors, status: :unprocessable_entity
-#     end
-#   end
+  # PATCH/PUT /players/1
+  def update
+    if @player.update(player_params)
+      render json: @player
+    else
+      render json: @player.errors, status: :unprocessable_entity
+    end
+  end
 
-#   # DELETE /players/1
-#   def destroy
-#     @player.destroy
-#   end
+  # DELETE /players/1
+  def destroy
+    @player.destroy
+  end
 
-#   private
-#     # Use callbacks to share common setup or constraints between actions.
-#     def set_player
-#       @player = Player.find(params[:id])
-#     end
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_player
+      @player = Player.find(params[:id])
+    end
 
-#     # Only allow a list of trusted parameters through.
-#     def player_params
-#       params.require(:player).permit(:name, :img_url, 
-#       :position, :footed, :height_weight, :national_team, 
-#       :club, :ratings, :stats_img)
-#     end
-# end
+    # Only allow a list of trusted parameters through.
+    def player_params
+      params.require(:player).permit(:name, :img_url, 
+      :position, :footed, :height_weight, :national_team, 
+      :club, :ratings, :potentials, :stats_url)
+    end
+end
