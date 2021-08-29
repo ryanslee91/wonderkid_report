@@ -2,10 +2,15 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom'
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
+import Login from './screens/Login/Login';
 import Layout from './components/Layouts/Layout';
+import MainContainer from './containers/MainContainer';
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const history = useHistory();
+
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
@@ -35,10 +40,13 @@ function App() {
 
   return (
     <div className="App">
-      <Layout currentUser={currentUser} handleLogout={handleLogout}>
+      <Layout handleLogout={handleLogout}>
         <Switch>
           <Route path='/login'>
             <Login handleLogin={handleLogin} />
+          </Route>
+          <Route path='/'>
+            <MainContainer currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>
