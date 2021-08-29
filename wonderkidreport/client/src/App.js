@@ -2,7 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom'
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
-import Layout from './layouts/Layout';
+import Layout from './components/Layouts/Layout';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
