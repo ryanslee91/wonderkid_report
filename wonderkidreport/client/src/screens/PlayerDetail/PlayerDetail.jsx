@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getOnePlayer } from "../../services/players";
+import './PlayerDetail.css'
 
 export default function PlayerDetail(props) {
   const [player, setPlayer] = useState(null);
@@ -16,7 +17,7 @@ export default function PlayerDetail(props) {
   }, [id]);
 
   return (
-    <div>
+    <div className='playerDetail'>
       <img src={player?.img_url}></img>
       <h3>Name: {player?.name}</h3>
       <h5>Position: {player?.position}</h5>
@@ -27,6 +28,7 @@ export default function PlayerDetail(props) {
       <h5>Ratings: {player?.ratings}</h5>
       <h5>Potentials: {player?.potentials}</h5>
       <script src={player?.stats_url}></script>
+      <button>Edit Player</button>
     </div>
   )
 }

@@ -9,7 +9,7 @@ import PlayerCreate from '../screens/PlayerCreate/PlayerCreate';
 export default function MainContainer(props) {
   const [players, setPlayers] = useState([]);
   const [leagues, setLeagues] = useState([]);
-  const history = useHistory;
+  const history = useHistory();
 
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -31,7 +31,7 @@ export default function MainContainer(props) {
     const newPlayer = await postPlayer(formData);
     setPlayers((prevState) => [...prevState, newPlayer]);
     handleLeagueAdd(leagueId, newPlayer.id)
-    history.push("/")
+    history.push('/')
   }
 
   const handleLeagueAdd = async (leagueId, playerId) => {
