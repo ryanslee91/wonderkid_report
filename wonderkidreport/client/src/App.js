@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom'
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
 import Login from './screens/Login/Login';
+import Register from './screens/Register/Register';
 import Layout from './components/Layouts/Layout';
 import MainContainer from './containers/MainContainer';
 
@@ -40,10 +41,13 @@ function App() {
 
   return (
     <div className="App">
-      <Layout handleLogout={handleLogout}>
+      <Layout currentUser={currentUser} setCurrentUser={setCurrentUser} handleLogout={handleLogout}>
         <Switch>
           <Route path='/login'>
             <Login handleLogin={handleLogin} />
+          </Route>
+          <Route path='/register'>
+            <Register handleRegister={handleRegister} />
           </Route>
           <Route path='/'>
             <MainContainer currentUser={currentUser} />

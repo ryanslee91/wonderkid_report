@@ -2,25 +2,23 @@ import { Link } from 'react-router-dom'
 import React from 'react';
 
 export default function Navbar(props) {
-  const { currentUser, handleLogout } = props;
+  const { handleLogout } = props;
   return (
     <header>
-    <h1>Wonderkid Report</h1>
-    {currentUser ? (
-      <div>
-        <p>{currentUser.username}</p>
-        <button onClick={handleLogout}>Logout</button>
-      </div>
-    ) : (
-      <Link to="/login">Login/Register</Link>
-    )}
-    <hr />
-    {currentUser && (
-      <div>
-  
-      </div>
-    )}
-    {props.children}
-  </header>
+      <h1>Wonderkid Report</h1>
+      {!props.currentUser ? (
+        <>
+          <div>
+          <Link to="/login">Login/Register</Link>
+          </div>
+        </>
+      ) : (
+          <div>
+      <p>{props.currentUser.username}</p>
+            <button onClick={handleLogout}>Logout</button>
+            </div>
+      )
+      }
+    </header>
   )
 }
