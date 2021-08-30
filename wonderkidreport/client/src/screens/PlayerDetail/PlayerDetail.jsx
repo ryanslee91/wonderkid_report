@@ -17,7 +17,16 @@ export default function PlayerDetail(props) {
 
   return (
     <div>
-      
+      <img src={player?.img_url}></img>
+      <h3>{player?.name}</h3>
+      <h5>{player?.position}</h5>
+      <h5>{player?.footed}</h5>
+      <h5>{player?.height_weight}</h5>
+      <h5>{player?.national_team}</h5>
+      <h5>{player?.club}</h5>
+      <h5>{player?.ratings}</h5>
+      <h5>{player?.potentials}</h5>
+      <script src={player?.stats_url}></script>
     </div>
   )
 }
