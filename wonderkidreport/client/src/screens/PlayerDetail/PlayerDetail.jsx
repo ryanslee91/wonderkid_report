@@ -28,7 +28,13 @@ export default function PlayerDetail(props) {
       <h5>Ratings: {player?.ratings}</h5>
       <h5>Potentials: {player?.potentials}</h5>
       <script src={player?.stats_url}></script>
-      <button>Edit Player</button>
+      {currentUser?.id === player?.user_id ? (
+    <h1>private</h1>
+      ) : (
+          <Link to={`/players/${player?.id}/edit`}>
+            Edit Player
+          </Link>
+      )}
     </div>
   )
 }

@@ -5,7 +5,7 @@ export default function Navbar(props) {
   const { handleLogout } = props;
   return (
     <header>
-      <h1>Wonderkid Report</h1>
+      <Link to='/'><h1>Wonderkid Report</h1></Link>
       {!props.currentUser ? (
         <>
           <div>
