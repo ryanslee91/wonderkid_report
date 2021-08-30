@@ -6,8 +6,7 @@ import { getAllPlayers } from '../../services/players';
 
 export default function PlayerCard(props) {
   const [players, setPlayers] = useState([]);
-  const [toggle, setToggle] = useState(false)
-  const history = useHistory();    
+  
 
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -21,7 +20,7 @@ export default function PlayerCard(props) {
   return (
     <>
     <div className="player-card">
-      {players.map((player) => (
+        {players.map((player) => (
         <Link to={`/player/${player._id}`} key={player._id}>
           <div className='player-image'>
             <img src={player.img_url}></img>
