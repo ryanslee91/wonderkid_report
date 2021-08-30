@@ -1,0 +1,18 @@
+.content {
+	display: none;
+}
+
+.active-content {
+	display: block;
+}
+
+.active-tab {
+	border-bottom: 1px solid transparent;
+}
+
+.active-tabs::before {
+	content: "";
+	display: block;
+	transform: translateX(-50%);
+	background-color: rgb(91, 91, 179);
+}
