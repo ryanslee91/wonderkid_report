@@ -48,17 +48,17 @@ export default function MainContainer(props) {
 
   return (
     <div>
-      <Switch>
+     <Switch>
       <Route exact path="/">
         <Home players={players} leagues={leagues} />
       </Route>
+      <Route path='/players/new'>
+          <PlayerCreate handleCreate={handleCreate} />
+        </Route>
       <Route path='/players/:id'>
           <PlayerDetail leagues={leagues} />
       </Route>
-        <Route path='/players/new'>
-          <PlayerCreate handleCreate={handleCreate} />
-        </Route>
-        </Switch>
+      </Switch>
     </div>
   )
 }
