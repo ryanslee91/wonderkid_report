@@ -16,6 +16,9 @@ export default function Navbar(props) {
           <div>
       <p>{props.currentUser.username}</p>
             <button onClick={handleLogout}>Logout</button>
+            <Link to='/players/new'>
+              <button>Create</button>
+              </Link>
             </div>
       )
       }

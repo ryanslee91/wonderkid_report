@@ -4,6 +4,7 @@ import { getAllPlayers, postPlayer, putPlayer, deletePlayer } from '../services/
 import { getAllLeagues, addLeagueToPlayer } from '../services/leagues';
 import Home from '../screens/Home/Home';
 import PlayerDetail from '../screens/PlayerDetail/PlayerDetail';
+import PlayerCreate from '../screens/PlayerCreate/PlayerCreate';
 
 export default function MainContainer(props) {
   const [players, setPlayers] = useState([]);
@@ -47,12 +48,17 @@ export default function MainContainer(props) {
 
   return (
     <div>
+      <Switch>
       <Route exact path="/">
         <Home players={players} leagues={leagues} />
       </Route>
       <Route path='/players/:id'>
           <PlayerDetail leagues={leagues} />
+      </Route>
+        <Route path='/players/new'>
+          <PlayerCreate handleCreate={handleCreate} />
         </Route>
+        </Switch>
     </div>
   )
 }

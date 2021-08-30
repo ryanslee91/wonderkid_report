@@ -9,23 +9,23 @@ export default function PlayerDetail(props) {
 
   useEffect(() => {
     const fetchPlayer = async () => {
-      const player = await getOnePlayer()
+      const player = await getOnePlayer(id)
       setPlayer(player)
     }
     fetchPlayer()
-  }, [id, players]);
+  }, [id]);
 
   return (
     <div>
       <img src={player?.img_url}></img>
-      <h3>{player?.name}</h3>
-      <h5>{player?.position}</h5>
-      <h5>{player?.footed}</h5>
-      <h5>{player?.height_weight}</h5>
-      <h5>{player?.national_team}</h5>
-      <h5>{player?.club}</h5>
-      <h5>{player?.ratings}</h5>
-      <h5>{player?.potentials}</h5>
+      <h3>Name: {player?.name}</h3>
+      <h5>Position: {player?.position}</h5>
+      <h5>Footed: {player?.footed}</h5>
+      <h5>Height/Weight: {player?.height_weight}</h5>
+      <h5>National Team: {player?.national_team}</h5>
+      <h5>Club: {player?.club}</h5>
+      <h5>Ratings: {player?.ratings}</h5>
+      <h5>Potentials: {player?.potentials}</h5>
       <script src={player?.stats_url}></script>
     </div>
   )
