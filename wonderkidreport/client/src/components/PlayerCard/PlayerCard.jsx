@@ -21,7 +21,7 @@ export default function PlayerCard(props) {
     <>
     <div className="player-card">
         {players.map((player) => (
-        <Link to={`/player/${player._id}`} key={player._id}>
+        <Link to={`/players/${player.id}`} key={player.id}>
           <div className='player-image'>
             <img src={player.img_url}></img>
           </div>

@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { getOnePlayer } from "../../services/players";
 
 export default function PlayerDetail(props) {
-  const [player, setPlayer] = useStaet(null);
+  const [player, setPlayer] = useState(null);
   const { currentUser, players } = props;
   const { id } = useParams();
 

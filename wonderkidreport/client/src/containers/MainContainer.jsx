@@ -3,6 +3,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import { getAllPlayers, postPlayer, putPlayer, deletePlayer } from '../services/players';
 import { getAllLeagues, addLeagueToPlayer } from '../services/leagues';
 import Home from '../screens/Home/Home';
+import PlayerDetail from '../screens/PlayerDetail/PlayerDetail';
 
 export default function MainContainer(props) {
   const [players, setPlayers] = useState([]);
@@ -49,6 +50,9 @@ export default function MainContainer(props) {
       <Route exact path="/">
         <Home players={players} leagues={leagues} />
       </Route>
+      <Route path='/players/:id'>
+          <PlayerDetail leagues={leagues} />
+        </Route>
     </div>
   )
 }
