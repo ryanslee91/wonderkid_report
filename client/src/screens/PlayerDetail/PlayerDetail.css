@@ -1,1 +1,34 @@
+.playerDetail {
+	color: white;
+	background-color: rgb(9, 20, 52);
+	opacity: .9;
+	background-size: cover;
+	margin-top: 120px;
+	margin-bottom: 100px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	justify-content: space-evenly;
+	align-items: center;
+}
 
+#editLink {
+	color: white;
+	font-weight: bold;
+}
+
+#detailImg {
+	width: 138px;
+}
+
+#stats_img {
+	padding-bottom: 13px;
+	width: 300px;
+}
+
+#detailSpan {
+	color: rgb(184, 154, 160);
+}

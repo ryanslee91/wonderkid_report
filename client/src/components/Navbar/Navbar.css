@@ -1,0 +1,27 @@
+.navBar {
+	display: flex;
+	justify-content: center;
+	justify-content: space-evenly;
+	background-color: rgb(9, 20, 52);
+	color: white;
+	position: sticky;
+	top: 0;
+	width: 100%;
+}
+
+#title {
+	color: white;
+}
+#login {
+	color: white;
+}
+
+#titleLink,
+#loginLink {
+	text-decoration: none;
+}
+
+#greeting {
+	font-weight: bold;
+	font-style: italic;
+}

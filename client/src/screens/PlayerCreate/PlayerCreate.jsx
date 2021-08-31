@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router';
+import './PlayerCreate.css'
 
 export default function PlayerCreate(props) {
   const [selectedLeague, setSelectedLeague] = useState("default");
-  const history = useHistory()
   const [formData, setFormData] = useState({
     name: '',
     img_url: '',
@@ -21,6 +20,7 @@ export default function PlayerCreate(props) {
     ratings, potentials, stats_url } = formData;
   const { leagues } = props;
   const { handleCreate } = props;
+  console.log(leagues);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,10 +38,29 @@ export default function PlayerCreate(props) {
     <div className='createPlayer'>
       <form onSubmit={(e) => {
         e.preventDefault();
-        handleCreate(formData);
+        const league = leagues.find((league) => league.name === selectedLeague)
+        handleCreate(formData, leagues.id);
       }}>
         <h3>Create a Player</h3>
         <pre>
+          <label>
+            League:
+            <select
+              name="leagues"
+            value={leagues}
+            placeholder="League"
+            onChange={handleLeagueChange}
+          >
+            <option disabled value="default">
+              Default
+            </option>
+            {leagues?.map((league) => (
+              <option name="leagues" value={league.name} key={league.id}>
+                {league.name}
+              </option>
+            ))}
+          </select>
+          </label>
         <label>
           Name:
           <input type='text' name='name' value={name} onChange={handleChange} />
@@ -81,10 +100,12 @@ export default function PlayerCreate(props) {
         <label>
           Stats:
           <input type='url' name='stats_url' value={stats_url} onChange={handleChange} />
-        </label><br />
+          </label><br />
+        
           <button>Submit</button>
           </pre>
       </form>
+      
     </div>
   )
 }

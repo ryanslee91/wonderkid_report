@@ -6,6 +6,7 @@ import Home from '../screens/Home/Home';
 import PlayerDetail from '../screens/PlayerDetail/PlayerDetail';
 import PlayerCreate from '../screens/PlayerCreate/PlayerCreate';
 import PlayerEdit from '../screens/PlayerEdit/PlayerEdit';
+import Leagues from '../screens/Leagues/Leagues';
 
 export default function MainContainer(props) {
   const [players, setPlayers] = useState([]);
@@ -28,6 +29,7 @@ export default function MainContainer(props) {
     }
     fetchLeagues();
   }, [])
+console.log(leagues)
 
   const handleCreate = async (formData, leagueId) => {
     const newPlayer = await postPlayer(formData);
@@ -59,9 +61,11 @@ export default function MainContainer(props) {
   }
 
   const handleDelete = async (id) => {
-    await deletePlayer(id);
-    setPlayers((prevState) => prevState.filter((player) => player.id !== id));
-    history.push('/')
+    if (window.confirm("Are you sure you want to delete the player?")) {
+      await deletePlayer(id);
+      setPlayers((prevState) => prevState.filter((player) => player.id !== id));
+      history.push('/')
+    }
   };
 
   return (
@@ -73,15 +77,15 @@ export default function MainContainer(props) {
         <Route path='/players/:id/edit'>
           <PlayerEdit players={players} handleUpdate={handleUpdate} handleDelete={handleDelete} />
         </Route>
-        {/* <Route path='/players/:id'>
-          <PlayerDetail players={players} handleDelete={handleDelete} />
-        </Route> */}
       <Route path='/players/new'>
-          <PlayerCreate handleCreate={handleCreate} />
+          <PlayerCreate handleCreate={handleCreate} leagues={leagues} />
         </Route>
       <Route path='/players/:id'>
           <PlayerDetail leagues={leagues} currentUser={currentUser} />
-      </Route>
+        </Route>
+        <Route path='/leagues'>
+          <Leagues leagues={leagues} currentUser={currentUser} />
+        </Route>
       </Switch>
     </div>
   )

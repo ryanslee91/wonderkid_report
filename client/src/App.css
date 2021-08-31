@@ -1,3 +1,9 @@
 .App {
 	text-align: center;
+	background-image: url('https://wallery.app/dufovot/uefa-champions-league-wallpaper.webp');
+	backdrop-filter: blur(10px);
+	background-size: cover;
+	margin: 0;
+	background-repeat: no-repeat;
+	min-height: 100vh;
 }

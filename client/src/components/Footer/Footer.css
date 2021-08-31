@@ -1,0 +1,41 @@
+.footer {
+	background-color: rgb(9, 20, 52);
+	bottom: 0;
+	width: 100%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	justify-content: space-evenly;
+	padding-bottom: 20px;
+}
+
+#github,
+#linkedin {
+	background-color: rgb(9, 20, 52);
+	color: white;
+}
+
+.icons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-content: space-evenly;
+}
+
+#footerTitle {
+	color: white;
+}
+
+@media screen and (max-width: 600px) {
+	.footer {
+		flex-direction: column;
+		padding-bottom: 200px;
+	}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+	.footer {
+		flex-direction: column;
+		padding-bottom: 450px;
+	}
+}

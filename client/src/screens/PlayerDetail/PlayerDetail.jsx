@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getOnePlayer } from "../../services/players";
+
 import './PlayerDetail.css'
 
 export default function PlayerDetail(props) {
   const [player, setPlayer] = useState({});
-  const { currentUser, players } = props;
+
+  const { currentUser, leagues } = props;
   const { id } = useParams();
 
   useEffect(() => {
@@ -16,28 +18,30 @@ export default function PlayerDetail(props) {
     }
     fetchPlayer()
   }, [id]);
+console.log(leagues)
+
 
   return (
     <div className='playerDetail'>
-      <img src={player?.img_url}></img>
-      <h3>Name: {player?.name}</h3>
-      <h5>Position: {player?.position}</h5>
-      <h5>Footed: {player?.footed}</h5>
-      <h5>Height/Weight: {player?.height_weight}</h5>
-      <h5>National Team: {player?.national_team}</h5>
-      <h5>Club: {player?.club}</h5>
-      <h5>Ratings: {player?.ratings}</h5>
-      <h5>Potentials: {player?.potentials}</h5>
-      <script src={player?.stats_url}></script>
+      <img id="detailImg" src={player?.img_url}></img>
+      <h3><span id="detailSpan">Name:</span> {player?.name}</h3>
+      <h5><span id="detailSpan">Position:</span> {player?.position}</h5>
+      <h5><span id="detailSpan">Footed:</span> {player?.footed}</h5>
+      <h5><span id="detailSpan">Height/Weight:</span> {player?.height_weight}</h5>
+      <h5><span id="detailSpan">National Team:</span> {player?.national_team}</h5>
+      <h5><span id="detailSpan">League:</span> {player?.league}</h5>
+      <h5><span id="detailSpan">Club:</span> {player?.club}</h5>
+      <h5><span id="detailSpan">Ratings:</span> {player?.ratings}</h5>
+      <h5><span id="detailSpan">Potentials:</span> {player?.potentials}</h5>
+      <img id="stats_img" src={player?.stats_url}></img><br />
       
  
       {currentUser?.id === player?.user_id && (
-   <Link to={`/players/${player?.id}/edit`}>
+   <Link id="editLink" to={`/players/${player?.id}/edit`}>
    Edit Player
         </Link>
      
       )}
-   
     </div>
   )
 }

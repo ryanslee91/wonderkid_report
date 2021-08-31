@@ -1,0 +1,26 @@
+.player-card {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	justify-content: center;
+	justify-content: space-evenly;
+	margin-top: 20px;
+	padding-bottom: 30px;
+	margin-bottom: 80px;
+}
+
+#playerImg {
+	width: 139px;
+}
+
+#playerLink {
+	color: white;
+
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#pNameSpan {
+	background-color: black;
+	border-radius: 10px;
+}

@@ -7,7 +7,7 @@ import './Layout.css'
 
 export default function Layout(props) {
   return (
-    <div>
+    <div className="layoutDiv">
           <Navbar currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} handleLogout={props.handleLogout} />
               <div>{props.children}</div>
           <Footer handleLogout={props.handleLogout} />

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getAllPlayers } from '../../services/players';
 import { Link } from 'react-router-dom';
+import './FeaturedCard.css'
 
 export default function FeaturedCard() {
   const [players, setPlayers] = useState([]);
@@ -17,16 +18,16 @@ export default function FeaturedCard() {
 
   return (
     <>
-    <div className="player-card">
+    <div className="featured-card">
         {players.map((player) => {
           if (player.potentials > '95') {
             return (
-            <Link to={`/players/${player.id}`} key={player.id}>
-              <div className='player-image'>
-                <img src={player.img_url}></img>
+            <Link id="featLink" to={`/players/${player.id}`} key={player.id}>
+              <div className='featured-image'>
+                <img id="featImg" src={player.img_url}></img>
               </div>
-              <div className='player-name'>
-                {player.name}
+              <div className='featured-name'>
+                <span id="featSpan">{player.name}</span>
               </div>
             </Link> )
           }

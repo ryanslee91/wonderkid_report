@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { getOnePlayer } from '../../services/players';
+import './PlayerEdit.css';
 
 export default function PlayerEdit(props) {
   const history = useHistory();
@@ -54,7 +54,7 @@ export default function PlayerEdit(props) {
 
 
   return (
-    <form onSubmit={(e) => {
+    <form id="editForm" onSubmit={(e) => {
       e.preventDefault();
       handleUpdate(id, formData)
     }}>
