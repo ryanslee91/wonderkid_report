@@ -5,7 +5,7 @@ export default function Navbar(props) {
   const { handleLogout } = props;
   return (
     <header>
-      <h1>Wonderkid Report</h1>
+      <Link to='/'><h1>Wonderkid Report</h1></Link>
       {!props.currentUser ? (
         <>
           <div>
@@ -16,6 +16,9 @@ export default function Navbar(props) {
           <div>
       <p>{props.currentUser.username}</p>
             <button onClick={handleLogout}>Logout</button>
+            <Link to='/players/new'>
+              <button>Create</button>
+              </Link>
             </div>
       )
       }

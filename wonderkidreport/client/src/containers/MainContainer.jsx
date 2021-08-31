@@ -3,11 +3,14 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import { getAllPlayers, postPlayer, putPlayer, deletePlayer } from '../services/players';
 import { getAllLeagues, addLeagueToPlayer } from '../services/leagues';
 import Home from '../screens/Home/Home';
+import PlayerDetail from '../screens/PlayerDetail/PlayerDetail';
+import PlayerCreate from '../screens/PlayerCreate/PlayerCreate';
+import PlayerEdit from '../screens/PlayerEdit/PlayerEdit';
 
 export default function MainContainer(props) {
   const [players, setPlayers] = useState([]);
   const [leagues, setLeagues] = useState([]);
-  const history = useHistory;
+  const history = useHistory();
 
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -29,7 +32,7 @@ export default function MainContainer(props) {
     const newPlayer = await postPlayer(formData);
     setPlayers((prevState) => [...prevState, newPlayer]);
     handleLeagueAdd(leagueId, newPlayer.id)
-    history.push("/")
+    history.push('/')
   }
 
   const handleLeagueAdd = async (leagueId, playerId) => {
@@ -41,14 +44,44 @@ export default function MainContainer(props) {
           : player;
     })
     )
-    history.push(`/players/${playerId}`)
+    history.push('/players/:id')
   }
+
+  const handleUpdate = async (id, formData) => {
+    const playerData = await putPlayer(id, formData);
+    setPlayers((prevState) => 
+      prevState.map((player) => {
+        return player.id === Number(id) ? playerData : player;
+      
+      }))
+      history.push(`/players/${id}`)
+  }
+
+  const handleDelete = async (id) => {
+    await deletePlayer(id);
+    setPlayers((prevState) => prevState.filter((player) => player.id !== id));
+    history.push('/')
+  };
 
   return (
     <div>
+     <Switch>
       <Route exact path="/">
         <Home players={players} leagues={leagues} />
+        </Route>
+        <Route path='/players/:id/edit'>
+          <PlayerEdit players={players} handleUpdate={handleUpdate} handleDelete={handleDelete} />
+        </Route>
+        {/* <Route path='/players/:id'>
+          <PlayerDetail players={players} handleDelete={handleDelete} />
+        </Route> */}
+      <Route path='/players/new'>
+          <PlayerCreate handleCreate={handleCreate} />
+        </Route>
+      <Route path='/players/:id'>
+          <PlayerDetail leagues={leagues} />
       </Route>
+      </Switch>
     </div>
   )
 }

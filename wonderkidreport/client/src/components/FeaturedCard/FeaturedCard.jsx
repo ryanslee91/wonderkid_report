@@ -21,7 +21,7 @@ export default function FeaturedCard() {
         {players.map((player) => {
           if (player.potentials > '95') {
             return (
-            <Link to={`/player/${player._id}`} key={player._id}>
+            <Link to={`/players/${player.id}`} key={player.id}>
               <div className='player-image'>
                 <img src={player.img_url}></img>
               </div>
