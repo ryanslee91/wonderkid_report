@@ -4,7 +4,7 @@ import { getOnePlayer } from "../../services/players";
 import './PlayerDetail.css'
 
 export default function PlayerDetail(props) {
-  const [player, setPlayer] = useState(null);
+  const [player, setPlayer] = useState({});
   const { currentUser, players } = props;
   const { id } = useParams();
 
@@ -12,6 +12,7 @@ export default function PlayerDetail(props) {
     const fetchPlayer = async () => {
       const player = await getOnePlayer(id)
       setPlayer(player)
+  
     }
     fetchPlayer()
   }, [id]);
@@ -28,13 +29,15 @@ export default function PlayerDetail(props) {
       <h5>Ratings: {player?.ratings}</h5>
       <h5>Potentials: {player?.potentials}</h5>
       <script src={player?.stats_url}></script>
-      {/* {currentUser?.id === player?.user_id ? (
-    <h1>private</h1>
-      ) : ( */}
-          <Link to={`/players/${player?.id}/edit`}>
-            Edit Player
-          </Link>
-      {/* )} */}
+      
+ 
+      {currentUser?.id === player?.user_id && (
+   <Link to={`/players/${player?.id}/edit`}>
+   Edit Player
+        </Link>
+     
+      )}
+   
     </div>
   )
 }

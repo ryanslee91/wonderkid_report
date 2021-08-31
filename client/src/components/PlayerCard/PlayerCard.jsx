@@ -18,19 +18,17 @@ export default function PlayerCard(props) {
   }, [])
 
   return (
-    <>
-    <div className="player-card">
-        {players.map((player) => (
+    <div>
+    {players.map((player) => (
+      <div key={player.id}>
         <Link to={`/players/${player.id}`} key={player.id}>
-          <div className='player-image'>
-            <img src={player.img_url}></img>
-          </div>
-          <div className='player-name'>
-            {player.name}
-          </div>
-        </Link>
-      ))}
+        <img src={player.img_url}></img>
+          <p>{player.name}</p>
+        </Link> 
       </div>
-      </>
-  )
+    ))}
+  </div>
+);
 }
+
+

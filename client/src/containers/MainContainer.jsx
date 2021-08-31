@@ -10,6 +10,7 @@ import PlayerEdit from '../screens/PlayerEdit/PlayerEdit';
 export default function MainContainer(props) {
   const [players, setPlayers] = useState([]);
   const [leagues, setLeagues] = useState([]);
+  const { currentUser } = props;
   const history = useHistory();
 
   useEffect(() => {
@@ -79,7 +80,7 @@ export default function MainContainer(props) {
           <PlayerCreate handleCreate={handleCreate} />
         </Route>
       <Route path='/players/:id'>
-          <PlayerDetail leagues={leagues} />
+          <PlayerDetail leagues={leagues} currentUser={currentUser} />
       </Route>
       </Switch>
     </div>
