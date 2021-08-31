@@ -52,9 +52,15 @@ export default function MainContainer(props) {
     setPlayers((prevState) => 
       prevState.map((player) => {
         return player.id === Number(id) ? playerData : player;
+      
       }))
-      history.push('/players/:id')
+      history.push('/')
   }
+
+  const handleDelete = async (id) => {
+    await deletePlayer(id);
+    setPlayers((prevState) => prevState.filter((player) => player.id !== id));
+  };
 
   return (
     <div>
@@ -63,7 +69,7 @@ export default function MainContainer(props) {
         <Home players={players} leagues={leagues} />
         </Route>
         <Route path='/players/:id/edit'>
-          <PlayerEdit players={players} handleUpdate={handleUpdate} />
+          <PlayerEdit players={players} handleUpdate={handleUpdate} handleDelete={handleDelete} />
         </Route>
       <Route path='/players/new'>
           <PlayerCreate handleCreate={handleCreate} />

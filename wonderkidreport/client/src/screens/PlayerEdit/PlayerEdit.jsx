@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { getOnePlayer } from '../../services/players';
 
 export default function PlayerEdit(props) {
-
   const history = useHistory();
   const [formData, setFormData] = useState({
     name: '',
@@ -20,7 +20,7 @@ export default function PlayerEdit(props) {
   const { name, img_url, position, footed,
     height_weight, national_team, club,
     ratings, potentials, stats_url } = formData;
-  const { players, handleUpdate } = props;
+  const { players, handleUpdate, handleDelete } = props;
   const { id } = useParams();
 
   useEffect(() => {
@@ -52,11 +52,11 @@ export default function PlayerEdit(props) {
     }))
   }
 
+
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
       handleUpdate(id, formData)
-      history.push('/')
     }}>
        <pre>
       <label>
@@ -99,7 +99,8 @@ export default function PlayerEdit(props) {
           Stats:
           <input type='url' name='stats_url' value={stats_url} onChange={handleChange} />
         </label><br />
-          <button>Submit</button>
+        <button>Submit</button><br />
+        <button onClick={() => handleDelete(id)}>Delete</button>
           </pre>
       </form>
   )
