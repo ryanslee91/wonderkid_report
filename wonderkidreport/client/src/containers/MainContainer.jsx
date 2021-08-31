@@ -54,12 +54,13 @@ export default function MainContainer(props) {
         return player.id === Number(id) ? playerData : player;
       
       }))
-      history.push('/')
+      history.push(`/players/${id}`)
   }
 
   const handleDelete = async (id) => {
     await deletePlayer(id);
     setPlayers((prevState) => prevState.filter((player) => player.id !== id));
+    history.push('/')
   };
 
   return (
@@ -71,6 +72,9 @@ export default function MainContainer(props) {
         <Route path='/players/:id/edit'>
           <PlayerEdit players={players} handleUpdate={handleUpdate} handleDelete={handleDelete} />
         </Route>
+        {/* <Route path='/players/:id'>
+          <PlayerDetail players={players} handleDelete={handleDelete} />
+        </Route> */}
       <Route path='/players/new'>
           <PlayerCreate handleCreate={handleCreate} />
         </Route>
