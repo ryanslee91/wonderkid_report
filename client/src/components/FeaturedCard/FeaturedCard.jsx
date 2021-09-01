@@ -24,7 +24,7 @@ export default function FeaturedCard() {
             return (
             <Link id="featLink" to={`/players/${player.id}`} key={player.id}>
               <div className='featured-image'>
-                <img id="featImg" src={player.img_url}></img>
+                <img id="featImg" src={player.img_url} alt="img_url"></img>
               </div>
               <div className='featured-name'>
                 <span id="featSpan">{player.name}</span>

@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <div className="footerDiv">
     <footer className="footer">
-    <Link id="titleLink" to='/'><h5 id="footerTitle">WONDERKID REPORT</h5></Link>
+    <Link id="titleLink" to='/'><h4 id="footerTitle">Created by Ryan Lee</h4></Link>
         <div className="icons">
         <a id="github" href='https://github.com/ryanslee91' target='_blank' rel='noreferrer'>
         <FontAwesomeIcon icon={faGithub} id='git' />

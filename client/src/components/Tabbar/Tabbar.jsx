@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PlayerCard from '../PlayerCard/PlayerCard'
 import FeaturedCard from '../FeaturedCard/FeaturedCard'
-import { Select, MenuItem } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import './Tabbar.css'
 

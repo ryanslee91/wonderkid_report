@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import './PlayerEdit.css';
 
 export default function PlayerEdit(props) {
-  const history = useHistory();
   const [formData, setFormData] = useState({
     name: '',
     img_url: '',
