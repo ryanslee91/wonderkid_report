@@ -81,7 +81,7 @@ console.log(leagues)
           <PlayerCreate handleCreate={handleCreate} leagues={leagues} />
         </Route>
       <Route path='/players/:id'>
-          <PlayerDetail leagues={leagues} currentUser={currentUser} />
+          <PlayerDetail leagues={leagues} currentUser={currentUser} players={players} />
         </Route>
         <Route path='/leagues'>
           <Leagues leagues={leagues} currentUser={currentUser} />

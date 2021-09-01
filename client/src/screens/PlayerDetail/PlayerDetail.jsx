@@ -7,7 +7,7 @@ import './PlayerDetail.css'
 export default function PlayerDetail(props) {
   const [player, setPlayer] = useState({});
 
-  const { currentUser, leagues } = props;
+  const { currentUser, leagues, players } = props;
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,8 +18,6 @@ export default function PlayerDetail(props) {
     }
     fetchPlayer()
   }, [id]);
-  console.log(leagues)
-
 
 
   return (
@@ -30,7 +28,6 @@ export default function PlayerDetail(props) {
       <h5><span id="detailSpan">Footed:</span> {player?.footed}</h5>
       <h5><span id="detailSpan">Height/Weight:</span> {player?.height_weight}</h5>
       <h5><span id="detailSpan">National Team:</span> {player?.national_team}</h5>
-      <h5><span id="detailSpan">League:</span> {player?.league}</h5>
       <h5><span id="detailSpan">Club:</span> {player?.club}</h5>
       <h5><span id="detailSpan">Ratings:</span> {player?.ratings}</h5>
       <h5><span id="detailSpan">Potentials:</span> {player?.potentials}</h5>

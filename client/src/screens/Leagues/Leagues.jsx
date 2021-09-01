@@ -7,14 +7,30 @@ export default function Leagues(props) {
   const handleChange = (e) => {
     setValue(e.target.value)
   }
-  console.log(leagues)
+  console.log(leagues[0]?.players[0].name)
   // console.log(currentUser)
+
+  const leagueMapping = 
+      leagues?.map((league) => {
+        return league.players.map((player) => {
+          return player.name
+        })
+      }) 
+  
+  console.log(leagueMapping)
   return (
     <div className="filterDiv">
       {leagues?.map((league) => (
-        <p key={league.id}>{league.name}</p>
+        <p id="leagueName" key={league.id}>
+          {league.name}
+         
+        </p>
+        
       ))}
-      <select
+      
+     
+      
+      {/* <select
             value={setValue}
             placeholder="League"
             onChange={handleChange}
@@ -27,7 +43,7 @@ export default function Leagues(props) {
                 {league.name}
               </option>
             ))}
-          </select>
+          </select> */}
     </div>
 
   )
