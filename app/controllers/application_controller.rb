@@ -23,4 +23,11 @@ class ApplicationController < ActionController::API
         render json: { errors: e.message }, status: :unauthorized
       end
     end
+
+    def cors_preflight_check
+      headers['Access-Control-Max-Age'] = '1728000'
+  
+      render json: {} # Render as you need
+    end
+  end
 end
