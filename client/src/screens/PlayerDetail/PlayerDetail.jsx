@@ -1,3 +1,4 @@
+import { arrayOf } from "prop-types";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getOnePlayer } from "../../services/players";
@@ -18,6 +19,9 @@ export default function PlayerDetail(props) {
     }
     fetchPlayer()
   }, [id]);
+
+  
+  // console.log(players[0].leagues[0].name)
 
 
   return (

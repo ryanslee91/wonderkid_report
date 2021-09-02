@@ -21,9 +21,11 @@ export default function Tabbar(props) {
               player.leagues[1]?.name === queriedLeague
           );
       setQueriedLeague(queried);
+      
     }
     fetchQueriedLeagues()
   }, [queriedLeague, players])
+  
 
   const handleChange = (e) => {
     setQueriedLeague(e.target.value)

@@ -6,12 +6,12 @@ class PlayersController < ApplicationController
   def index
     @players = Player.all
 
-    render json: @players
+    render json: @players, include: :leagues
   end
 
   # GET /players/1
   def show
-    render json: @player, include: :leagues
+    render json: @player, include: [:leagues, :user]
   end
 
   # POST /players
@@ -49,6 +49,6 @@ class PlayersController < ApplicationController
     def player_params
       params.require(:player).permit(:name, :img_url, 
       :position, :footed, :height_weight, :national_team, 
-      :club, :ratings, :potentials, :stats_url)
+      :club, :ratings, :potentials, :stats_url, :user_id)
     end
 end

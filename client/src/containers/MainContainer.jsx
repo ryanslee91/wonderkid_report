@@ -14,13 +14,13 @@ export default function MainContainer(props) {
   const { currentUser } = props;
   const history = useHistory();
 
-  useEffect(() => {
-    const fetchPlayers = async () => {
-      const players = await getAllPlayers();
-      setPlayers(players)
-    }
-    fetchPlayers();
-  }, [])
+  // useEffect(() => {
+  //   const fetchPlayers = async () => {
+  //     const players = await getAllPlayers();
+  //     setPlayers(players)
+  //   }
+  //   fetchPlayers();
+  // }, [])
 
   useEffect(() => {
     const fetchLeagues = async () => {
@@ -29,7 +29,7 @@ export default function MainContainer(props) {
     }
     fetchLeagues();
   }, [])
-console.log(leagues)
+// console.log(leagues)
 
   const handleCreate = async (formData, leagueId) => {
     const newPlayer = await postPlayer(formData);
@@ -84,7 +84,7 @@ console.log(leagues)
           <PlayerDetail leagues={leagues} currentUser={currentUser} players={players} />
         </Route>
         <Route path='/leagues'>
-          <Leagues leagues={leagues} currentUser={currentUser} />
+          <Leagues leagues={leagues} currentUser={currentUser} players={players} />
         </Route>
       </Switch>
     </div>
