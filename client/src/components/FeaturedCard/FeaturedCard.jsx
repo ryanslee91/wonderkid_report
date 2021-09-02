@@ -10,7 +10,7 @@ export default function FeaturedCard() {
   useEffect(() => {
     const fetchPlayers = async () => {
       let res = await getAllPlayers()
-      console.log(res)
+      // console.log(res)
       setPlayers(res)
     }
     fetchPlayers()

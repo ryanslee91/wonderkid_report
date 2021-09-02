@@ -20,10 +20,10 @@ export default function Leagues(props) {
   console.log(leagueMapping)
   return (
     <div className="filterDiv">
+          {leagueMapping}
       {leagues?.map((league) => (
         <p id="leagueName" key={league.id}>
           {league.name}
-         
         </p>
         
       ))}

@@ -95,26 +95,26 @@ src
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| CORE BACKEND STRUCTURE | H | 3hrs|  |  |
-| BACKEND CRUD | H | 2hrs|  |  |
-| BACKEND AUTH | H | 2hrs|  |  |
-| SEED DATA | H | 2hrs|  |  |
-| FRONTEND COMPONENTS HIERARCHY | H | 2hrs| | |
-| FRONTEND CRUD | H | 3hrs|  |  |
-| FRONTEND AUTH | H | 3hrs|  |  |
-| FRONTEND ROUTING | H | 2hrs|  |  |
-| FRONTEND STATE MANAGEMENT | H | 2hrs|  |  |
-| LANDING PAGE LAYOUT | H | 1hrs|  |  |
-| DETAIL PAGE LAYOUT | H | 1hrs|  |  |
-| EDIT PAGE LAYOUT | H | 1hrs|  |  |
-| CREATE PAGE LAYOUT | H | 1hrs|  |  |
-| SIGN IN / REGISTER LAYOUT | H | 1hrs|  |  |
-| BASIC CSS | H | 3hrs|  |  |
-| DETAILED CSS | H | 3hrs|  |  |
-| MEDIA QUERIES SETTING | H | 3hrs|  |  |
-| DEBUGGING | H | 3hrs|  |  |
-| REVIEW | H | 2hrs|  |  |
-| Total | H | 40hrs|  |  |
+| CORE BACKEND STRUCTURE | H | 3hrs| 4hrs | 4hrs |
+| BACKEND CRUD | H | 2hrs| 4hrs | 4hrs |
+| BACKEND AUTH | H | 2hrs| 3hrs | 3hrs |
+| SEED DATA | H | 2hrs| 1hr | 1hr |
+| FRONTEND COMPONENTS HIERARCHY | H | 2hrs| 2hrs | 2hrs |
+| FRONTEND CRUD | H | 3hrs| 3hrs | 3hrs |
+| FRONTEND AUTH | H | 3hrs| 3hrs | 3hrs |
+| FRONTEND ROUTING | H | 2hrs| 2hrs |2hrs  |
+| FRONTEND STATE MANAGEMENT | H | 2hrs| 2hrs | 2hrs |
+| LANDING PAGE LAYOUT | H | 1hrs| 2hrs | 2hrs |
+| DETAIL PAGE LAYOUT | H | 1hrs| 2hrs | 2hrs |
+| EDIT PAGE LAYOUT | H | 1hrs| 1hrs | 1hrs |
+| CREATE PAGE LAYOUT | H | 1hrs| 1hrs | 1hrs |
+| SIGN IN / REGISTER LAYOUT | H | 1hrs| 1hrs | 1hrs |
+| BASIC CSS | H | 3hrs| 3hrs | 3hrs |
+| DETAILED CSS | H | 3hrs| 2hrs | 2hrs |
+| MEDIA QUERIES SETTING | H | 3hrs| 1hrs | 1hrs |
+| DEBUGGING | H | 3hrs| 3hrs | 3hrs |
+| REVIEW | H | 2hrs| 2hrs | 2hrs |
+| Total | H | 40hrs| 42hrs | 42hrs |
 
 ## Server (Back-End)
 
@@ -131,6 +131,25 @@ src
 
 ## Code Showcase
  
+  <!-- <div className="tab-container">
+      <div className="bloc-tabs">
+        <div className={toggleState === 1 ? "tab active-tab" : "tab"} onClick={() => toggleTab(1)}>Featured</div>
+        <div className={toggleState === 2 ? "tab active-tab" : "tab"} onClick={() => toggleTab(2)}>All Players</div>
+     
+      </div>
+      <div className="content-tabs">
+        <div className={toggleState === 1 ? "content active-content" : "content"}>
+        <FeaturedCard />
+        </div>
+        <div className={toggleState === 2 ? "content active-content" : "content"}>
+        <Link id="sortLeague" to="/leagues/"><span id="sortSpan">Sort By Leagues</span></Link>
+        {leagues?.map((league) => (
+        <p key={league.id}>{league.name}</p>
+      ))}
+         {leagues?.map((league) => (
+        <p key={league.id}>{league.name.players}</p>
+      ))} -->
 
 ## Code Issues & Resolutions
 
+I have been having a problem to access the league data which I made a join table to associate with each player.
