@@ -18,8 +18,7 @@ export default function PlayerCreate(props) {
   const { name, img_url, position, footed,
     height_weight, national_team, club,
     ratings, potentials, stats_url } = formData;
-  const { leagues } = props;
-  const { handleCreate } = props;
+  const { leagues, handleCreate } = props;
   console.log(leagues);
 
   const handleChange = (e) => {
@@ -36,7 +35,9 @@ export default function PlayerCreate(props) {
 
   return (
     <div className='createPlayer'>
-      <form onSubmit={(e) => {
+      <form
+        className="create-form"
+        onSubmit={(e) => {
         e.preventDefault();
         const league = leagues.find((league) => league.name === selectedLeague)
         handleCreate(formData, leagues.id);
@@ -51,8 +52,8 @@ export default function PlayerCreate(props) {
             placeholder="League"
             onChange={handleLeagueChange}
           >
-            <option disabled value="default">
-              Default
+            <option>
+              -
             </option>
             {leagues?.map((league) => (
               <option name="leagues" value={league.name} key={league.id}>

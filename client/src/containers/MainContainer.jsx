@@ -11,6 +11,7 @@ import Leagues from '../screens/Leagues/Leagues';
 export default function MainContainer(props) {
   const [players, setPlayers] = useState([]);
   const [leagues, setLeagues] = useState([]);
+  const [toggleFetch, setToggleFetch] = useState(false);
   const { currentUser } = props;
   const history = useHistory();
 
