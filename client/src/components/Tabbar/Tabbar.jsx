@@ -54,7 +54,7 @@ export default function Tabbar(props) {
          {leagues?.map((league) => (
         <p key={league.id}>{league.name.players}</p>
       ))}
-      <select
+      {/* <select
             value={setQueriedLeague}
             placeholder="League"
             onChange={handleChange}
@@ -67,7 +67,7 @@ export default function Tabbar(props) {
                 {league.name}
               </option>
             ))}
-          </select>
+          </select> */}
           <PlayerCard />
         </div>
       </div>

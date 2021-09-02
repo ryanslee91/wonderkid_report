@@ -15,13 +15,13 @@ export default function MainContainer(props) {
   const { currentUser } = props;
   const history = useHistory();
 
-  // useEffect(() => {
-  //   const fetchPlayers = async () => {
-  //     const players = await getAllPlayers();
-  //     setPlayers(players)
-  //   }
-  //   fetchPlayers();
-  // }, [])
+  useEffect(() => {
+    const fetchPlayers = async () => {
+      const players = await getAllPlayers();
+      setPlayers(players)
+    }
+    fetchPlayers();
+  }, [])
 
   useEffect(() => {
     const fetchLeagues = async () => {
@@ -48,6 +48,7 @@ export default function MainContainer(props) {
           : player;
     })
     )
+    setToggleFetch((prev) => !prev);
     history.push('/players/:id')
   }
 

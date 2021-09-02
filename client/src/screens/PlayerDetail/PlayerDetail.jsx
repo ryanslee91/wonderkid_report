@@ -1,12 +1,12 @@
-import { arrayOf } from "prop-types";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { addLeagueToPlayer } from "../../services/leagues";
 import { getOnePlayer } from "../../services/players";
-
 import './PlayerDetail.css'
 
 export default function PlayerDetail(props) {
   const [player, setPlayer] = useState({});
+  const [selectedLeague, setSelectedLeague] = useState('');
 
   const { currentUser, leagues, players } = props;
   const { id } = useParams();
@@ -19,6 +19,19 @@ export default function PlayerDetail(props) {
     }
     fetchPlayer()
   }, [id]);
+
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+    setSelectedLeague(value);
+  };
+
+  // Our handle submit for adding the flavor to our food
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const player = await addLeagueToPlayer(id, selectedLeague);
+    setSelectedLeague(player);
+  };
 
   
   // console.log(players[0].leagues[0].name)

@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { addLeagueToPlayer } from '../../services/leagues';
 import './PlayerCreate.css'
 
 export default function PlayerCreate(props) {
-  const [selectedLeague, setSelectedLeague] = useState("default");
+  const [selectedLeague, setSelectedLeague] = useState("");
+  const [player, setPlayer] = useState(null);
+  const { id } = useParams();
   const [formData, setFormData] = useState({
     name: '',
     img_url: '',
@@ -19,7 +23,7 @@ export default function PlayerCreate(props) {
     height_weight, national_team, club,
     ratings, potentials, stats_url } = formData;
   const { leagues, handleCreate } = props;
-  console.log(leagues);
+  // console.log(leagues);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,7 +34,14 @@ export default function PlayerCreate(props) {
   }
 
   const handleLeagueChange = (e) => {
-    setSelectedLeague(e.target.value)
+    const { value } = e.target;
+    setSelectedLeague(value)
+  }
+
+  const handleLeagueSubmit = async (e) => {
+    e.preventDefault();
+    const player = await addLeagueToPlayer(id, selectedLeague)
+    setPlayer(player);
   }
 
   return (
@@ -38,30 +49,37 @@ export default function PlayerCreate(props) {
       <form
         className="create-form"
         onSubmit={(e) => {
-        e.preventDefault();
-        const league = leagues.find((league) => league.name === selectedLeague)
-        handleCreate(formData, leagues.id);
+          e.preventDefault();
+          const league = leagues.find(
+            (league) => league.name === selectedLeague
+          );
+          // handleLeagueSubmit(e);
+          handleCreate(formData, league.id);
       }}>
         <h3>Create a Player</h3>
         <pre>
           <label>
             League:
-            <select
-              name="leagues"
-            value={leagues}
-            placeholder="League"
-            onChange={handleLeagueChange}
-          >
-            <option>
-              -
-            </option>
-            {leagues?.map((league) => (
-              <option name="leagues" value={league.name} key={league.id}>
-                {league.name}
-              </option>
-            ))}
-          </select>
-          </label>
+      {player?.leagues?.map((league) => (
+        <p key={league.id}>{league.name}</p>
+      ))}
+      {/* below is our for for the league drop down */}
+        <select onChange={handleLeagueChange} defaultValue='default'>
+          {/* we can set a default value to tell people to select a league*/}
+          {/* the "defaultValue" on the <select> tag needs to match the "value" on our default <option> tag */}
+          {/* we also add the "disabled" in the <option> to prevent users from selecting it*/}
+          <option disabled value='default'>
+            -- Select a league --
+          </option>
+          {/* now we loop over all leagues and return an <option> tag for each */}
+
+          {leagues.map((league) => (
+            // we track the league's id as the "value" which will get added to state onChange
+            // the league's name goes between the open and close tag which is what the user sees
+            <option value={league.name}>{league.name}</option>
+          ))}
+        </select>
+          </label><br />
         <label>
           Name:
           <input type='text' name='name' value={name} onChange={handleChange} />

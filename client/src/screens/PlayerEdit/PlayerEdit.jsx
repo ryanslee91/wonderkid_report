@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
+import { addLeagueToPlayer } from '../../services/leagues';
 import './PlayerEdit.css';
 
 export default function PlayerEdit(props) {
+  const [selectedLeague, setSelectedLeague] = useState("");
+  const [player, setPlayer] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     img_url: '',
@@ -20,6 +23,7 @@ export default function PlayerEdit(props) {
     ratings, potentials, stats_url } = formData;
   const { players, handleUpdate, handleDelete } = props;
   const { id } = useParams();
+  const { leagues } = props;
 
   useEffect(() => {
     const prefillFormData = () => {
@@ -50,13 +54,46 @@ export default function PlayerEdit(props) {
     }))
   }
 
+  const handleLeagueChange = (e) => {
+    const { value } = e.target;
+    setSelectedLeague(value)
+  }
+
+  const handleLeagueSubmit = async (e) => {
+    e.preventDefault();
+    const player = await addLeagueToPlayer(id, selectedLeague)
+    setPlayer(player);
+  }
+
+
 
   return (
     <form id="editForm" onSubmit={(e) => {
       e.preventDefault();
       handleUpdate(id, formData)
     }}>
-       <pre>
+      <pre>
+      <label>
+            League:
+            {player?.leagues?.map((league) => (
+        <p key={league.id}>{league.name}</p>
+      ))}
+      {/* below is our for for the league drop down */}
+        <select onChange={handleLeagueChange} defaultValue='default'>
+          {/* we can set a default value to tell people to select a league*/}
+          {/* the "defaultValue" on the <select> tag needs to match the "value" on our default <option> tag */}
+          {/* we also add the "disabled" in the <option> to prevent users from selecting it*/}
+          <option disabled value='default'>
+            -- Select a league --
+          </option>
+          {/* now we loop over all leagues and return an <option> tag for each */}
+          {leagues?.map((league) => (
+            // we track the league's id as the "value" which will get added to state onChange
+            // the league's name goes between the open and close tag which is what the user sees
+            <option value={league.name}>{league.name}</option>
+          ))}
+        </select>
+          </label><br />
       <label>
           Name:
           <input type='text' name='name' value={name} onChange={handleChange} />
