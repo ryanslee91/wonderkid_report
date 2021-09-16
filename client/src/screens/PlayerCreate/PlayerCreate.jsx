@@ -34,14 +34,7 @@ export default function PlayerCreate(props) {
   }
 
   const handleLeagueChange = (e) => {
-    const { value } = e.target;
-    setSelectedLeague(value)
-  }
-
-  const handleLeagueSubmit = async (e) => {
-    e.preventDefault();
-    const player = await addLeagueToPlayer(id, selectedLeague)
-    setPlayer(player);
+    setSelectedLeague(e.target.value);
   }
 
   return (
@@ -53,7 +46,6 @@ export default function PlayerCreate(props) {
           const league = leagues.find(
             (league) => league.name === selectedLeague
           );
-          // handleLeagueSubmit(e);
           handleCreate(formData, league.id);
       }}>
         <h3>Create a Player</h3>
@@ -63,8 +55,8 @@ export default function PlayerCreate(props) {
       {player?.leagues?.map((league) => (
         <p key={league.id}>{league.name}</p>
       ))}
-      {/* below is our for for the league drop down */}
-        <select onChange={handleLeagueChange} defaultValue='default'>
+      {/* below is for the league drop down */}
+            <select value={selectedLeague} onChange={handleLeagueChange} defaultValue='default'>
           {/* we can set a default value to tell people to select a league*/}
           {/* the "defaultValue" on the <select> tag needs to match the "value" on our default <option> tag */}
           {/* we also add the "disabled" in the <option> to prevent users from selecting it*/}
@@ -76,7 +68,7 @@ export default function PlayerCreate(props) {
           {leagues.map((league) => (
             // we track the league's id as the "value" which will get added to state onChange
             // the league's name goes between the open and close tag which is what the user sees
-            <option value={league.name}>{league.name}</option>
+            <option value={league.name} key={league.id}>{league.name}</option>
           ))}
         </select>
           </label><br />

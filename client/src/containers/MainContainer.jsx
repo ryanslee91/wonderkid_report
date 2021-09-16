@@ -77,10 +77,18 @@ export default function MainContainer(props) {
         <Home players={players} leagues={leagues} />
         </Route>
         <Route path='/players/:id/edit'>
-          <PlayerEdit players={players} handleUpdate={handleUpdate} handleDelete={handleDelete} />
+          <PlayerEdit players={players}
+            handleUpdate={handleUpdate}
+            leagues={leagues}
+            handleLeagueAdd={handleLeagueAdd}
+            handleDelete={handleDelete} />
         </Route>
       <Route path='/players/new'>
-          <PlayerCreate handleCreate={handleCreate} leagues={leagues} />
+          <PlayerCreate
+            handleCreate={handleCreate}
+            leagues={leagues}
+            handleLeagueAdd={handleLeagueAdd}
+          />
         </Route>
       <Route path='/players/:id'>
           <PlayerDetail leagues={leagues} currentUser={currentUser} players={players} />

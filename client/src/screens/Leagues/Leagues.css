@@ -1,6 +1,6 @@
 .leagueDiv {
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-top: 50px;
+	margin-bottom: 60px;
 	color: white;
 	font-weight: bold;
 	background-color: rgb(9, 20, 52);
@@ -11,10 +11,28 @@
 	gap: 30px;
 	justify-content: center;
 	padding-bottom: 20px;
-	width: 330px;
-	height: 450px;
+	width: 500px;
+	height: 870px;
 }
 
 #leagueName {
 	color: pink;
+}
+
+#laliga,
+#bliga,
+#pliga,
+#ligueone,
+#seriea {
+	margin-top: -25px;
+}
+
+#eplPlayers,
+#laligaPlayers,
+#seriePlayers,
+#liguePlayers,
+#bundesPlayers,
+#pligaPlayers {
+	width: 70px;
+	padding-top: 10px;
 }

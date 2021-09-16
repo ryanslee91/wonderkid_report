@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Leagues.css'
 
 export default function Leagues(props) {
@@ -27,14 +28,21 @@ export default function Leagues(props) {
       <label id="epl">
         <span id="leagueName">
           {leagues[0]?.name}<br />
-          </span>
+        </span>
+
         {leagues?.map((league) => {
           return league.players.map((player) => {
             if (league.name === 'English Premiere League') {
-              return player.name
+              return <Link id="playerLink" to={`/players/${player.id}`} key={player.id}>
+                <img
+                id="eplPlayers"
+                src={player.img_url} alt={player.name}>
+                  </img>     
+                </Link>
             }
           })
-        })} 
+        })}
+  
         </label>
         <label id="laliga">
         <span id="leagueName">
@@ -42,10 +50,18 @@ export default function Leagues(props) {
           </span>
         {leagues?.map((league) => {
           return league.players.map((player) => {
+
             if (league.name === 'La Liga') {
-              return player.name
-            }
-          })
+              return <Link id="playerLink" to={`/players/${player.id}`} key={player.id}>
+      
+                <img
+              id="laligaPlayers"
+              src={player.img_url} alt={player.name}>
+              </img> 
+       
+              </Link>
+            }       
+          })    
         })} 
         </label>
         <label id="bliga">
@@ -55,7 +71,11 @@ export default function Leagues(props) {
         {leagues?.map((league) => {
           return league.players.map((player) => {
             if (league.name === 'Bundesliga') {
-              return player.name
+              return  <Link id="playerLink" to={`/players/${player.id}`} key={player.id}> <img
+              id="bundesPlayers"
+              src={player.img_url}>
+              </img>
+              </Link>
             }
           })
         })} 
@@ -67,7 +87,11 @@ export default function Leagues(props) {
         {leagues?.map((league) => {
           return league.players.map((player) => {
             if (league.name === 'Serie A') {
-              return player.name
+              return  <Link id="playerLink" to={`/players/${player.id}`} key={player.id}> <img
+              id="seriePlayers"
+              src={player.img_url}>
+              </img>
+              </Link>
             }
           })
         })} 
@@ -79,7 +103,11 @@ export default function Leagues(props) {
         {leagues?.map((league) => {
           return league.players.map((player) => {
             if (league.name === 'Ligue 1') {
-              return player.name
+              return  <Link id="playerLink" to={`/players/${player.id}`} key={player.id}> <img
+              id="liguePlayers"
+              src={player.img_url}>
+              </img>
+              </Link>
             }
           })
         })} 
@@ -91,7 +119,11 @@ export default function Leagues(props) {
         {leagues?.map((league) => {
           return league.players.map((player) => {
             if (league.name === 'Primeira Liga') {
-              return player.name
+              return  <Link id="playerLink" to={`/players/${player.id}`} key={player.id}> <img
+              id="pligaPlayers"
+              src={player.img_url}>
+              </img>
+              </Link>
             }
           })
         })} 
